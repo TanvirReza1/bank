@@ -50,8 +50,8 @@ document
     const bank_name = document.getElementById("bank").value;
     const account_number = document.getElementById("ac-number").value;
     const add_amount = getInputValues("amount");
-    if(add_amount<=0){
-      alert('invalid amount')
+    if (add_amount <= 0) {
+      alert("invalid amount");
       return;
     }
     const get_pin = getInputValues("pin");
@@ -77,15 +77,12 @@ document
     console.log(transactionData);
   });
 
-
 // cash out
 document
   .getElementById("cash-out-btn")
   .addEventListener("click", function (event) {
     event.preventDefault();
-    const withdraw_amount = Number(
-      document.getElementById("withdraw_money").value
-    );
+    const withdraw_amount = getInputValues("withdraw_money");
     const saved_money = getInnerText("money");
 
     if (!withdraw_amount || withdraw_amount <= 0) {
